@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>Election Results</h2>
+    <a href="/admin_logout">Logout</a>
+</div>
+
+<div class="container">
+    <h2>Results</h2>
+
+    <table>
+        <tr>
+            <th>Candidate</th>
+            <th>Votes</th>
+        </tr>
+
+        {% for c, v in data %}
+        <tr class="{% if c == winner %}winner{% endif %}">
+            <td>{{ c }}</td>
+            <td>{{ v }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3 style="margin-top:20px;">Winner: {{ winner }}</h3>
+</div>
+
+</body>
+</html>

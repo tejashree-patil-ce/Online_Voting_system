@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vote</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .card {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            background: #667eea;
+            color: white;
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <h2>Vote Panel</h2>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="container">
+    <h2>Select Candidate</h2>
+
+    <form method="POST">
+        <div class="card">
+            <input type="radio" name="candidate" value="Candidate A" required> Candidate A
+        </div>
+
+        <div class="card">
+            <input type="radio" name="candidate" value="Candidate B"> Candidate B
+        </div>
+
+        <div class="card">
+            <input type="radio" name="candidate" value="Candidate C"> Candidate C
+        </div>
+
+        <button type="submit">Submit Vote</button>
+    </form>
+</div>
+
+</body>
+</html>
